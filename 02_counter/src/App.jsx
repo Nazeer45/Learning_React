@@ -8,16 +8,23 @@ function App() {
 
   const increase = () =>{
     if (counter <20){
-    counter = counter + 1
-    setCounter(counter)
+    // setCounter(counter+1) // if setCounter is called multiple times then counter will not be updated multiple times
+    // setCounter(counter+1)
+    // setCounter(counter+1)
+    // setCounter(counter+1)
+
+    // to update multiple times then use callback function in setCounter
+    setCounter(prevCounter => prevCounter + 1)
+    // setCounter(prevCounter => prevCounter + 1)
+    // setCounter(prevCounter => prevCounter + 1)
+    
     console.log(counter)
     }
   }
 
   const decrease = () =>{
     if (counter >0){
-    counter = counter - 1
-    setCounter(counter)
+    setCounter(counter-1)
     }
   }
 
